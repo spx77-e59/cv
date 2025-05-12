@@ -1,6 +1,10 @@
 import { useState } from "react";
+import "../styles/EducationBackground.css";
+import "../styles/form.css";
+import "../styles/submitted.css";
+import "../styles/preview.css";
 
-const EducationBackground = ({ id, onDelete }) => {
+const EducationBackground = ({ id, onDelete, isPreview }) => {
     const [EBForm, setEBForm] = useState({
         institution: "",
         study: "",
@@ -29,7 +33,14 @@ const EducationBackground = ({ id, onDelete }) => {
 
     return (
         <div>
-            {submitted ? (
+            {isPreview ? (
+                <div>
+                    <p>Institution: {EBForm.institution}</p>
+                    <p>Area of Study: {EBForm.study}</p>
+                    <p>Start Date: {EBForm.startDate}</p>
+                    <p>End Date: {EBForm.endDate}</p>
+                </div>
+            ) : submitted ? (
                 <div>
                     <p>Institution: {EBForm.institution}</p>
                     <p>Area of Study: {EBForm.study}</p>
@@ -52,7 +63,7 @@ const EducationBackground = ({ id, onDelete }) => {
                     <button type="submit">Submit</button>
                 </form>
             )}
-            <button onClick={() => onDelete(id)}>Delete</button>
+            {!isPreview && <button onClick={() => onDelete(id)}>Delete</button>}
         </div>
     );
 }

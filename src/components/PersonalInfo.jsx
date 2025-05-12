@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import "../styles/PersonalInfo.css";
+import "../styles/form.css";
+import "../styles/submitted.css";
+import "../styles/preview.css";
 
 
-const PersonalInfo = () => {
+const PersonalInfo = ({ isPreview }) => {
 
     const [PIForm, setPIForm] = useState({
         name: '',
@@ -27,7 +31,13 @@ const PersonalInfo = () => {
     }
     return (
         <div>
-            {submitted ? (
+            {isPreview ? (
+                <div>
+                    <p>Full Name: {PIForm.name}</p>
+                    <p>Email: {PIForm.email}</p>
+                    <p>Phone: {PIForm.phone}</p>
+                </div>
+            ) : submitted ? (
                 <div>
                     <p>Full Name: {PIForm.name}</p>
                     <p>Email: {PIForm.email}</p>

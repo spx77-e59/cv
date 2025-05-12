@@ -1,0 +1,75 @@
+/* Global reset for modern web apps */
+
+/* Reset box-sizing to border-box for all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove margin and padding for all elements */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic font settings */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased; /* For better text rendering */
+  -moz-osx-font-smoothing: grayscale; /* For better text rendering */
+}
+
+
+/* Reset for form elements (inputs, selects, buttons) */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid #ddd;
+  outline: none;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* Reset the appearance of buttons */
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+
+/* Make sure all form elements fill available width */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+textarea {
+  width: 100%;
+}
+
+/* Normalize font-smoothing for more consistent display */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Enable focus outlines for accessibility (only for keyboard navigation) */
+:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Add transition on all elements for smooth animations */
+* {
+  transition: all 0.3s ease-in-out;
+}

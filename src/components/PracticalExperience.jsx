@@ -1,6 +1,10 @@
 import { useState } from "react";
+import "../styles/PracticalExperience.css";
+import "../styles/form.css";
+import "../styles/submitted.css";
+import "../styles/preview.css";
 
-const PracticalExperience = ({ id, onDelete }) => {
+const PracticalExperience = ({ id, onDelete, isPreview }) => {
 
     const [PEForm, setPEForm] = useState({
         company: "",
@@ -32,7 +36,15 @@ const PracticalExperience = ({ id, onDelete }) => {
 
     return (
         <div>
-            {submitted ? (
+            {isPreview ? (
+                <div>
+                    <p>Company: {PEForm.company}</p>
+                    <p>Position: {PEForm.position}</p>
+                    <p>Responsibilities: {PEForm.responsibilities}</p>
+                    <p>Start Date: {PEForm.startDate}</p>
+                    <p>End Date: {PEForm.endDate}</p>
+                </div>
+            ) : submitted ? (
                 <div>
                     <p>Company: {PEForm.company}</p>
                     <p>Position: {PEForm.position}</p>
@@ -57,7 +69,7 @@ const PracticalExperience = ({ id, onDelete }) => {
                     <button type="submit">Submit</button>
                 </form>
             )}
-            <button onClick={() => onDelete(id)}>Delete</button>
+            {!isPreview && <button onClick={() => onDelete(id)}>Delete</button>}
         </div>
     );
 }
