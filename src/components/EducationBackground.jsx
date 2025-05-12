@@ -54,10 +54,10 @@ const EducationBackground = ({ id, onDelete, isPreview }) => {
 
                     <input type="text" id="study" name="study" value={EBForm.study} onChange={handleChange} placeholder="Area of study" />
 
-                    <label htmlFor="startDate"></label>
+                    <label htmlFor="startDate">Start Date</label>
                     <input type="date" id="startDate" name="startDate" value={EBForm.startDate} onChange={handleChange} />
 
-                    <label htmlFor="endDate"></label>
+                    <label htmlFor="endDate">End Date</label>
                     <input type="date" id="endDate" name="endDate" value={EBForm.endDate} onChange={handleChange} />
 
                     <button type="submit">Submit</button>

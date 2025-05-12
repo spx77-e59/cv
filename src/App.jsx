@@ -42,34 +42,48 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <div>
+    <>
+      <header className="header">
         <h1>CV/ Resume Builder</h1>
+      </header>
+      <div className="parent-container">
+
         <h2>Fill in your details</h2>
-        <h2>Personal Information</h2>
-        <PersonalInfo isPreview={isPreview}></PersonalInfo>
-        <h2>Education Background</h2>
-        {EBForms.map(EBForm => (
-          <EducationBackground key={EBForm.id} id={EBForm.id} onDelete={handleEBDelete} isPreview={isPreview}></EducationBackground>
-        ))}
-        {!isPreview && <button className="btn-add" onClick={createEB}>Add Another</button>}
 
-        <h2>Practical Experience</h2>
-        {PEForms.map(PEForm => (
-          <PracticalExperience key={PEForm.id} id={PEForm.id} onDelete={handlePEDelete} isPreview={isPreview}></PracticalExperience>
-        ))}
-        {!isPreview && <button className="btn-add" onClick={createPE}>Add Another</button>}
-      </div>
-
-      {isPreview ? (
-        <div>
-          <button onClick={handleBack}>Back</button>
-          <button onClick={createPDF}>pdf</button>
+        <div className="section">
+          <h2>Personal Information</h2>
+          <PersonalInfo isPreview={isPreview}></PersonalInfo>
         </div>
-      ) : (
-        <button className="btn-preview" onClick={handlePreview}>Preview</button>
-      )}
-    </div>
+
+        <div className="section">
+          <h2>Education Background</h2>
+          {EBForms.map(EBForm => (
+            <EducationBackground key={EBForm.id} id={EBForm.id} onDelete={handleEBDelete} isPreview={isPreview}></EducationBackground>
+          ))}
+          {!isPreview && <button className="btn-add" onClick={createEB}>Add Another</button>}
+        </div>
+
+        <div className="section">
+          <h2>Practical Experience</h2>
+          {PEForms.map(PEForm => (
+            <PracticalExperience key={PEForm.id} id={PEForm.id} onDelete={handlePEDelete} isPreview={isPreview}></PracticalExperience>
+          ))}
+          {!isPreview && <button className="btn-add" onClick={createPE}>Add Another</button>}
+        </div>
+
+        {isPreview ? (
+          <div className="btn-div">
+            <button className="btn-back" onClick={handleBack}>Back</button>
+            <button className="btn-pdf" onClick={createPDF}>pdf</button>
+          </div>
+        ) : (
+          <div className="btn-div">
+            <button className="btn-preview" onClick={handlePreview}>Preview</button>
+          </div>
+        )}
+      </div>
+    </>
+
   )
 }
 

@@ -1,0 +1,227 @@
+/* Container around the whole form */
+.parent-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* Sticky Header */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Section styling */
+.section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+}
+
+.section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Form headings */
+.parent-container>h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+    font-weight: 600;
+}
+
+/* Button section */
+.btn-div {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* General Button Style */
+button {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Base styles for all buttons */
+button {
+    background-color: #4CAF50;
+    /* Default background color */
+    color: white;
+}
+
+/* Hover Effects */
+button:hover {
+    background-color: #45a049;
+    /* Slightly darker green */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Active Button */
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus Effect */
+button:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+    /* Green glow for accessibility */
+}
+
+/* Disabled State */
+button:disabled {
+    background-color: #ddd;
+    color: #bbb;
+    cursor: not-allowed;
+    box-shadow: none;
+    border: 2px solid #ccc;
+}
+
+/* Preview Button */
+.btn-preview {
+    background-color: #1E88E5;
+    /* Blue */
+    border-color: #1E88E5;
+}
+
+.btn-preview:hover {
+    background-color: #1976D2;
+}
+
+.btn-preview:active {
+    background-color: #1565C0;
+}
+
+/* Back Button */
+.btn-back {
+    background-color: #FFC107;
+    /* Yellow */
+    border-color: #FFC107;
+}
+
+.btn-back:hover {
+    background-color: #FFB300;
+}
+
+.btn-back:active {
+    background-color: #FF8F00;
+}
+
+/* PDF Button */
+.btn-pdf {
+    background-color: #D32F2F;
+    /* Red */
+    border-color: #D32F2F;
+}
+
+.btn-pdf:hover {
+    background-color: #C62828;
+}
+
+.btn-pdf:active {
+    background-color: #B71C1C;
+}
+
+/* Add Button */
+.btn-add {
+    background-color: #4CAF50;
+    /* Green */
+    border-color: #4CAF50;
+}
+
+.btn-add:hover {
+    background-color: #45A049;
+}
+
+.btn-add:active {
+    background-color: #388E3C;
+}
+
+/* Delete Button */
+.btn-delete {
+    background-color: #F44336;
+    /* Red */
+    border-color: #F44336;
+}
+
+.btn-delete:hover {
+    background-color: #E53935;
+}
+
+.btn-delete:active {
+    background-color: #D32F2F;
+}
+
+/* Submit Button */
+.btn-submit {
+    background-color: #2196F3;
+    /* Blue */
+    border-color: #2196F3;
+}
+
+.btn-submit:hover {
+    background-color: #1976D2;
+}
+
+.btn-submit:active {
+    background-color: #1565C0;
+}
+
+/* Edit Button */
+.btn-edit {
+    background-color: #9C27B0;
+    /* Purple */
+    border-color: #9C27B0;
+}
+
+.btn-edit:hover {
+    background-color: #8E24AA;
+}
+
+.btn-edit:active {
+    background-color: #7B1FA2;
+}
+
+/* Transparent Button (for border-only) */
+button.transparent {
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #333;
+}
+
+button.transparent:hover {
+    background-color: #f1f1f1;
+    color: #4CAF50;
+    border-color: #4CAF50;
+}
