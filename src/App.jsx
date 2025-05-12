@@ -1,33 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import PersonalInfo from "./components/PersonalInfo"
+import EducationBackground from "./components/EducationBackground"
+import PracticalExperience from "./components/PracticalExperience"
+import "./App.css"
+import { useState } from "react"
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [EBForms, setEBForms] = useState([{ id: uuidv4() }]);
+  const [PEForms, setPEForms] = useState([{ id: uuidv4() }]);
+
+  const createEB = () => {
+    setEBForms(prev => [...prev, { id: uuidv4() }])
+  }
+
+  const createPE = () => {
+    setPEForms(prev => [...prev, { id: uuidv4() }])
+  }
+
+  const handleEBDelete = (id) => {
+    setEBForms(EBForms.filter(EBForm => EBForm.id !== id))
+  }
+
+  const handlePEDelete = (id) => {
+    setPEForms(PEForms.filter(PEForm => PEForm.id !== id))
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="App">
+        <h1>CV/ Resume Builder</h1>
+        <h2>Fill in your details</h2>
+        <h2>Personal Information</h2>
+        <PersonalInfo></PersonalInfo>
+        <h2>Education Background</h2>
+        {EBForms.map(EBForm => (
+          <EducationBackground key={EBForm.id} id={EBForm.id} onDelete={handleEBDelete}></EducationBackground>
+        ))}
+
+        <button onClick={createEB}>Add Another</button>
+        <h2>Practical Experience</h2>
+        {PEForms.map(PEForm => (
+          <PracticalExperience key={PEForm.id} id={PEForm.id} onDelete={handlePEDelete}></PracticalExperience>
+        ))}
+        <button onClick={createPE}>Add Another</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
