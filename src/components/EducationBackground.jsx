@@ -32,7 +32,7 @@ const EducationBackground = ({ id, onDelete, isPreview }) => {
     }
 
     return (
-        <div>
+        <div className="education-background-container">
             {isPreview ? (
                 <div>
                     <p>Institution: {EBForm.institution}</p>
@@ -46,25 +46,28 @@ const EducationBackground = ({ id, onDelete, isPreview }) => {
                     <p>Area of Study: {EBForm.study}</p>
                     <p>Start Date: {EBForm.startDate}</p>
                     <p>End Date: {EBForm.endDate}</p>
-                    <button onClick={handleEdit}>Edit</button>
+                    <button className="btn-edit" onClick={handleEdit}>Edit</button>
                 </div>
             ) : (
                 <form onSubmit={handleSubmit}>
                     <input type="text" id="institution" name="institution" value={EBForm.institution} onChange={handleChange} placeholder="Institution" />
+                    <input type="text" id="study" name="study" value={EBForm.study} onChange={handleChange} placeholder="Area of Study" />
 
-                    <input type="text" id="study" name="study" value={EBForm.study} onChange={handleChange} placeholder="Area of study" />
+                    <div className="date">
+                        <label htmlFor="startDate">Start Date</label>
+                        <input type="date" id="startDate" name="startDate" value={EBForm.startDate} onChange={handleChange} />
+                    </div>
+                    <div className="date">
+                        <label htmlFor="endDate">End Date</label>
+                        <input type="date" id="endDate" name="endDate" value={EBForm.endDate} onChange={handleChange} />
+                    </div>
 
-                    <label htmlFor="startDate">Start Date</label>
-                    <input type="date" id="startDate" name="startDate" value={EBForm.startDate} onChange={handleChange} />
-
-                    <label htmlFor="endDate">End Date</label>
-                    <input type="date" id="endDate" name="endDate" value={EBForm.endDate} onChange={handleChange} />
-
-                    <button type="submit">Submit</button>
+                    <button type="submit" className="btn-submit">Submit</button>
                 </form>
             )}
-            {!isPreview && <button onClick={() => onDelete(id)}>Delete</button>}
+            {!isPreview && <button className="btn-delete" onClick={() => onDelete(id)}>Delete</button>}
         </div>
+
     );
 }
 

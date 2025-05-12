@@ -1,0 +1,88 @@
+.practical-experience-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Common paragraph styles */
+.practical-experience-container p {
+  font-size: 18px;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+/* Form layout */
+.practical-experience-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Inputs and textarea */
+.practical-experience-container input[type="text"],
+.practical-experience-container input[type="date"],
+.practical-experience-container textarea {
+  padding: 12px 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.practical-experience-container input:focus,
+.practical-experience-container textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+  outline: none;
+}
+
+/* Label and date input grouping */
+.practical-experience-container .date {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Buttons */
+.practical-experience-container button {
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+/* Reuse these from earlier button definitions */
+.btn-submit,
+.btn-edit,
+.btn-delete {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.btn-edit {
+  background-color: #2196F3;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.btn-submit:hover,
+.btn-edit:hover,
+.btn-delete:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}

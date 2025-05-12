@@ -1,0 +1,75 @@
+.education-background-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.education-background-container p {
+    font-size: 18px;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.education-background-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.education-background-container input[type="text"],
+.education-background-container input[type="date"] {
+    padding: 12px 16px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-background-container input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+    outline: none;
+}
+
+.education-background-container .date {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Buttons — reuse existing */
+.btn-submit,
+.btn-edit,
+.btn-delete {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.btn-edit {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.btn-submit:hover,
+.btn-edit:hover,
+.btn-delete:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
